@@ -1,0 +1,17 @@
+
+
+from datetime import*
+
+birthdate =input("Enter your Date of Birth (YYYY-MM-DD): ")             # Accept date in string format
+birth_date = datetime.strptime(birthdate,"%Y-%m-%d")                    # Convert date in datetime object
+
+def check_age(birth_date):
+    today = date.today()
+    age = today.year - birth_date.year                                  # Calculate age
+    if (today.month, today.day) < (birth_date.month, birth_date.day):
+        age = -1
+    print(f"You are {age} years old.")
+
+
+
+check_age(birth_date)
